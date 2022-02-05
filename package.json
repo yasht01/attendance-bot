@@ -1,0 +1,18 @@
+{
+  "name": "attendance_bot",
+  "version": "0.0.1",
+  "description": "Get attendance notifications to your telegram.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yash Tiwari",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "node-cron": "^3.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
