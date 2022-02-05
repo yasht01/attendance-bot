@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 const port = 3000;
-const { timeTable, attendanceCodes } = require('./time_table');
+const { timeTable, attendanceCodes, links } = require('./time_table');
 
 require('dotenv').config();
 
@@ -17,7 +17,7 @@ async function sendMessage(currentHour) {
     if (timeTable[day].size != 0) {
       const subjectCode = timeTable[day][hour.toString()];
       if (attendanceCodes.includes(subjectCode)) {
-        const text = `${subjectCode} at ${hour}:00`;
+        const text = `${subjectCode} at ${hour}:00\n` + `Meet link: ${links[subjectCode]}`;
         const response = await axios.get(`https://api.telegram.org/bot${process.env.BOT_API_KEY}/sendMessage?chat_id=${process.env.CHAT_ID}&text=${text}`);
         console.log(response.data);
       }

@@ -1,0 +1,29 @@
+// timeTable -> List<Map>
+// {
+//    "hour (without `:00`) (eg. 9, 10)": "subject code"
+// }
+// indices range from [0, 6]
+// 0 -> Sunday
+// 6 -> Saturday
+// leave empty if no classes scheduled on the day
+const timeTable = [
+  {
+    "9": "STAT",
+    ...
+  },
+  {},
+  ...
+];
+
+// List<String> having subject codes that require attendance
+const attendanceCodes = ["STAT",...];
+
+// Map<String, String> -> meet links for `attendanceCodes`
+const links = {
+  "STAT": "https://www.google.com/",
+  ...
+};
+
+exports.timeTable = timeTable;
+exports.attendanceCodes = attendanceCodes;
+exports.links = links;
