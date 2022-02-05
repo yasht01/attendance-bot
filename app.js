@@ -37,8 +37,8 @@ app.get('/startServer', (req, res) => {
 
   res.send('Done!');
 
-  cronTask = cron.schedule('0 * * * * *', () => {
-    console.log('running every 0th second');
+  cronTask = cron.schedule('0 * * * *', () => {
+    console.log('running every hour');
     let date = new Date();
     sendMessage(date.getHours().toString());
   });
